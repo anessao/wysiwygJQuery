@@ -1,5 +1,3 @@
-// Create an array of objects that represents famous people (see structure below).
-
 //********************************
 //OBJECT OF INFORMATION FOR DOM
 //********************************
@@ -35,6 +33,7 @@ var famousPeople = [
 	}
 ];
 
+//WRITES THE ABOVE SET OF DATA INTO THE DOM
 for (let x = 0; x < famousPeople.length; x++) {
 	$("div#personList").append(`<div class="col-sm-6 col-md-4 thumbnail">
 			<img src="${famousPeople[x].image}">
@@ -57,15 +56,52 @@ for (let x = 0; x < famousPeople.length; x++) {
 $("#personList .thumbnail:nth-child(odd)").addClass("yellowBackground");
 $("#personList .thumbnail:nth-child(even)").addClass("blueBackground");
 
+//********************************
+//On selection - input field should be on focus
+//pull info to input and allow for editing
+//********************************
+
+//GRABS SELECTED CARD'S INFO AND INPUTS IT IN INPUT FIELD FOR USER TO EDIT
+function originalText(personCard){
+	var quoteText = $(personCard).find("p").html();
+	$("#userInput").focus();
+	$("#userInput").val(quoteText);
+}
+//REPLACES TEXT IN DIV WITH INPUT VALUES LETTER BY LETTER
+function editText(personCard) {
+	$("#userInput").keyup(function(){
+		var newText = $("#userInput").val();
+		$(".border").find("p").html(newText);
+	});
+}
+
+//********************************
+//Add a border around the person card
+//that is clicked on
+//********************************
+
 var allSibs = $(".thumbnail").children();
 
 $(allSibs).click(function(e){
-	$(".thumbnail").removeClass("border");
+	//RESETS TO NO BORDERS TO PREVENT MULTIPLE SELECTIONS
+	$(".thumbnail").removeClass("border"); 
 
-	var parentDiv = e.target
-	var finalDiv = $(parentDiv).parentsUntil("div#personList", ".thumbnail");
-	$(finalDiv).addClass("border");
-})
+	//ADD CLASS TO CLICKED ITEM CARD
+	var targetEl = e.target
+	var parentEl = $(targetEl).parentsUntil("div#personList", ".thumbnail").addClass("border");
+
+	//EVENTS FOR EDITING SELECTED CARD
+	originalText(parentEl);
+	editText(parentEl);
+});
+
+
+//ENTER KEY EVENT - CLEARS INPUT FIELD AND REMOVES FOCUS - meant to "save" the new data in the DOM
+$(document).keypress(function(e) {
+	if (e.which == 13) {
+    	$("#userInput").val("").blur();
+	}
+});
 
 
 

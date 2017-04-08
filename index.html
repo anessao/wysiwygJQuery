@@ -1,22 +1,14 @@
-<!-- Create a DOM element for each of the objects inside the container. Style your person elements however you like. -->
-<!-- For every even numbered element, have a light yellow background. -->
-<!-- For every odd numbered element, have a light blue background. -->
-<!-- Each element's DOM structure should be as shown below. -->
-<!-- When you click on one of the person elements, a dotted border should appear around it. -->
-<!-- When you click on one of the person elements, the text input should immediately gain focus so that you can start typing. -->
-<!-- When there is a highlighted person element, and you begin typing in the input box, the person's biography should be immediately bound to what you are typing, letter by letter. -->
-<!-- When you press the enter/return key when typing in the input field, then the content of the input field should immediately be blank. -->
-
 <!DOCTYPE html>
 <html>
 <head>
 	<title>WYSIWYG using JQuery</title>
-	<!-- Latest compiled and minified CSS -->
+<!-- /////////////////////////BOOTSTRAP STYLING\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\-->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<!-- /////////////////////////PERSONAL CSS STYLES\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\-->
 	<link rel="stylesheet" type="text/css" href="styles.css">
 </head>
 <body>
-	<!-- Create a text input in your DOM. -->
+<!-- /////////////////////////INPUT FIELD AND BOOTSTRAP NAVBAR\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\-->
 	<nav class="navbar navbar-default">
 	  <div class="container-fluid">
 	    <!-- Brand and toggle get grouped for better mobile display -->
@@ -26,26 +18,25 @@
 
 	    <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="form-group col-md-4">
-          <input type="text" class="form-control" placeholder="Edit text">
+          <input id="userInput" type="text" class="form-control" placeholder="Edit text">
         </div>
-        <button type="submit" class="btn btn-default">Submit</button>
 	  </div><!-- /.container-fluid -->
 	</nav>
 
-	<!-- Create a container, block element in your DOM. -->
+<!-- /////////////////////////CONTAINER FOR DOM IMPLEMENTATION\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\-->
 	<div class="container" id="personList">
-
 	</div>
 
-
+<!-- /////////////////////////JQUERY CDN\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\-->
 	<script
   		src="https://code.jquery.com/jquery-3.2.1.min.js"
   		integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
   		crossorigin="anonymous">
   	</script>
-  	<!-- Latest compiled and minified JavaScript -->
+<!-- /////////////////////////BOOTSTRAP CDN\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\-->
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous">
 	</script>
+<!-- /////////////////////////PERSONAL JAVASCRIPT\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\-->
 	<script type="text/javascript" src="main.js"></script>
 </body>
 </html>
