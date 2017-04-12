@@ -1,0 +1,21 @@
+.yellowBackground{
+	background-color: #f5f2a4;
+}
+.blueBackground{
+	background-color: #6cc3f0;
+}
+
+.border {
+	border: 2px solid black;
+}
+img {
+	max-height: 290px;
+}
+
+.thumbnail {
+	height: 500px;
+}
+p {
+	height: 80px;
+	overflow: scroll;
+}
